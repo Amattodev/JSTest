@@ -24,4 +24,12 @@
 
 export const createUserActionString = (object) => {
   //ここに記述
+  const name =
+    object.userName && object.userName !== "" ? object.userName : "名無し";
+
+  if (object.action && object.action !== "") {
+    return `${name}さんが${object.action}しました`;
+  } else {
+    return `${name}さんは何もしませんでした`;
+  }
 };

@@ -10,10 +10,27 @@
 // 6. 再度buttonをクリックしたら、spanタグの打消線が消え、buttonの文字は完了に戻しましょう。
 // 7. styleの付け方はインラインスタイルを適応してください。
 
+import { useState } from "react";
+
 /**
  * @param {{userName:string}} props
  * @returns {ReactNode}
  */
-const TestComponent1 = ({ userName }) => {};
+const TestComponent1 = ({ userName }) => {
+  const [isDone, setIsDone] = useState(false);
+
+  const handleClick = () => {
+    setIsDone(!isDone);
+  };
+
+  return (
+    <li>
+      <span style={{ textDecoration: isDone ? "line-through" : "none" }}>
+        {userName}
+      </span>
+      <button onClick={handleClick}>{isDone ? "完了取消" : "完了"}</button>
+    </li>
+  );
+};
 
 export default TestComponent1;

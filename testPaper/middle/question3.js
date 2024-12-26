@@ -15,4 +15,12 @@
  */
 export const sumAndAverage = (array) => {
   //ここに記述
+  const sum = array.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0,
+  );
+
+  const average = Math.floor(sum / array.length);
+
+  return { sum, average };
 };
