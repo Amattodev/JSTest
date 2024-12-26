@@ -19,9 +19,9 @@ const TestComponent2 = ({ userNames }) => {
     <ul>
       {userNames
         .filter((name) => name !== "自分")
-        .map((userName, index) => {
-          <TestComponent1 key={index} userName={userName} />;
-        })}
+        .map((userName, index) => (
+          <TestComponent1 key={index} userName={userName} />
+        ))}
     </ul>
   );
 };
