@@ -28,7 +28,7 @@ const TestComponent1 = ({ userName }) => {
       <span style={{ textDecoration: isDone ? "line-through" : "none" }}>
         {userName}
       </span>
-      <button onClick={handleClick}>{isDone ? "完了取り消し" : "完了"}</button>
+      <button onClick={handleClick}>{isDone ? "完了取消" : "完了"}</button>
     </li>
   );
 };
