@@ -18,4 +18,6 @@
  */
 export const toggleArrayElement = (array, ele) => {
   //ここに記述
+  const hasElement = array.includes(ele);
+  return hasElement ? array.filter((item) => item !== ele) : [...array, ele];
 };

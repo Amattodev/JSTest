@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 
+import TestComponent1 from "./question6";
+
 // 問題7:**人の名前のチェックリストを作ろう**
 //    このコンポーネントにはuserNamesというユーザーの名前(文字列)の要素をもつ配列が渡ってきます。
 //    このコンポーネントは以下の条件を満たしてください。
@@ -12,6 +14,16 @@
  * @param {{userNames:string[]}} props
  * @returns {ReactNode}
  */
-const TestComponent2 = ({ userNames }) => {};
+const TestComponent2 = ({ userNames }) => {
+  return (
+    <ul>
+      {userNames
+        .filter((name) => name !== "自分")
+        .map((userName, index) => {
+          <TestComponent1 key={index} userName={userName} />;
+        })}
+    </ul>
+  );
+};
 
 export default TestComponent2;
